@@ -10,6 +10,7 @@ function Dashboard() {
   const { user } = useKindeBrowserClient();
   const [loading,setLoading]=useState(true)
   const router=useRouter();
+  
   useEffect(() => {
     if (user && user.email) {
       isBusinessRegistered();
