@@ -15,18 +15,29 @@ function CreateBusiness() {
     const {user}=useKindeBrowserClient();
     const router=useRouter();
 
-    const onCreateBusiness= async()=>{
-        console.log("btn Click", businessName)
-        await setDoc(doc(db, 'Business', user?.email), {
-            businessName:businessName,
-            user:user.email,
-            userName:user.given_name+" "+user.family_name
-        }).then(resp=>{
-            console.log("Document Saved");
-            toast('New Business Created');
-            router.replace('/dashboard')
-        })
-    }
+    const onCreateBusiness = async () => {
+      if (!user?.email) {
+        // Handle the case where the user's email is not available
+        toast('User email is not available');
+        return;
+      }
+    
+      try {
+        console.log("btn Click", businessName);
+        await setDoc(doc(db, 'Business', user.email), {
+          businessName: businessName,
+          user: user.email,
+          userName: user.given_name + " " + user.family_name,
+        });
+        console.log("Document Saved");
+        toast('New Business Created');
+        router.replace('/dashboard');
+      } catch (error) {
+        console.error("Error creating business:", error);
+        toast('Error creating business');
+      }
+    };
+    
   return (
     <div className='p-14 items-center flex flex-col gap-20 my-10'>
       <Image src='logo.svg' width={200} height={200} alt='logo'/>
