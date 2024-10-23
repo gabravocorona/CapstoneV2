@@ -17,7 +17,7 @@ function CreateBusiness() {
 
     const onCreateBusiness = async () => {
       if (!user?.email) {
-        // Handle the case where the user's email is not available
+        {/* Handle the case where the user's email is not available */}
         toast('User email is not available');
         return;
       }
@@ -46,7 +46,7 @@ function CreateBusiness() {
         <p className='text-slate-500'>You can always change this later from your settings.</p>
         <div className='w-full'>
             <label className='text-slate-400'>Team Name</label>
-            <Input placeholder="Ex. TubeGuruji" 
+            <Input placeholder="Business Name" 
             className='mt-2'
             onChange={(event)=>setBusinessName(event.target.value)}
             />

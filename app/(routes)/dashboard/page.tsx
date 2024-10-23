@@ -4,6 +4,7 @@ import React, { useEffect , useState } from 'react'
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 import { app } from '@/config/FirebaseConfig';
 import { useRouter } from 'next/navigation';
+import Meetingtype from './meeting-type/page';
 
 function Dashboard() {
   const db = getFirestore(app);
@@ -18,9 +19,9 @@ function Dashboard() {
   }, [user]);
 
   const isBusinessRegistered = async () => {  
-    if (!user?.email) return;  // Ensure email is not undefined or null
+    if (!user?.email) return;  {/* Ensure email is not undefined or null */}
 
-    const docRef = doc(db, "Business", user.email);  // This is safe now
+    const docRef = doc(db, "Business", user.email);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
@@ -38,8 +39,12 @@ function Dashboard() {
   }
   return (
     <div>
-      Dashboard
-      <LogoutLink>Logout</LogoutLink>
+      <Meetingtype/>
+      <div className='p-4 px-10'>
+        <div className='flex items-center float-right'>
+          <LogoutLink>Logout</LogoutLink>
+        </div>
+      </div>
     </div>
   );
 }
