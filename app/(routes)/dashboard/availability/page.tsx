@@ -46,9 +46,9 @@ function Availability() {
         const docRef=doc(db, "Business", user?.email);
         const docSnap=await getDoc(docRef);
         const result=docSnap.data();
-        setDaysAvailable(result.daysAvailable);
-        setStartTime(result.startTime);
-        setEndTime(result.endTime)
+        setDaysAvailable(result?.daysAvailable); //added '?' 
+        setStartTime(result?.startTime);
+        setEndTime(result?.endTime)
     }
 
     const onHandleChange=(day,value)=>{

@@ -77,7 +77,7 @@ const handleDateChange = (date) => {
 
     await setDoc(doc(db,'ScheduledMeetings',docId),{
       //businessName:businessInfo.businessName || 'N/A',
-      //businessEmail:businessInfo.email || 'N/A',
+      //businessEmail:businessInfo.email,
       selectedTime:selectedTime,
       selectedDate:date,
       formatedDate:format(date,'PPP'),

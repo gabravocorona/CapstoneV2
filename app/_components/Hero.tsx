@@ -18,7 +18,8 @@ function Hero() {
         </div>
         <div className='text-center max-w-3xl'>
             <h2 className='font-bold text-[60px] text-slate-700'>Schedule your Appointment with Me!</h2>
-            <h2 className='text-xl mt-5 text-slate-500'>NEED HELP SHOWELING SNOW? Schedule an Appointment Now to find the perfect time for me and you. </h2>
+            <h2 className='text-xl mt-5 text-slate-500'>NEED HELP SHOWELING SNOW? Schedule an Appointment Now to find the perfect time for me and you. 
+            Text me or call me on my phone number (530)231-3135</h2>
             <div className='flex gap-4 flex-col mt-5'>
                 <h3 className='text-sm'>Sign Up free with Google and Facebook</h3>
                 <div className=' flex justify-center gap-8'>
@@ -41,10 +42,16 @@ function Hero() {
                 <div className='flex flex-col justify-center items-center'>
                 <Image src='/work1.png' alt='work1' width={330} height={330}
                 className='h-[300px] object-cover rotate-90'/>
+                </div>
+                <div className='flex flex-col justify-center items-center'>
                 <Image src='/work2.png' alt='work2' width={300} height={300}
                 className='h-[300px] object-cover'/>
+                </div>
+                <div className='flex flex-col justify-center items-center'>
                 <Image src='/work3.png' alt='work3' width={330} height={330}
                 className='h-[300px] object-cover rotate-90'/>
+                </div>
+                <div className='flex flex-col justify-center items-center'>
                 <Image src='/work4.png' alt='work4' width={330} height={330}
                 className='h-[300px] object-cover rotate-90'/>
                 </div>
